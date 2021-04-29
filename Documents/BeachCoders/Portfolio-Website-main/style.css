@@ -144,7 +144,7 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 400px) {
   header {
     display: flex;
     justify-content: space-between;
@@ -187,6 +187,14 @@ button {
 
   a.contact:active {
   color: orange;
+}
+
+.contact a {
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: -30px;
+  border-bottom: -10px;
+  padding-bottom: -10px;
 }
 
 }
