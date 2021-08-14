@@ -13,13 +13,17 @@ mongoose.connect("mongodb://localhost:27017/Example", {
 
 const db = require("./models");
 
-const PORT = 3010;
+const PORT = process.env.PORT || 3010;
 //line below helps so that we don't have to parse the json in the testRoutes.js file. 
 //it's middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
+
+if(process.env.NODE_EV === 'production') {
+	app.use(express.static('client/build'));
+}
 
 // app.post("/api/test/data", (req, res) => {
 // 	console.log(req);
